@@ -222,14 +222,14 @@ def _extracted_from_forbidden_response_2(file_path, status_line, content_type_li
     return status_line + content_type_line + content_length_line + b"\r\n" + response
 
 def forbidden_response(client_socket):
+    file_path = "Proxy/Forbidden.html"
     response_html_error = _extracted_from_forbidden_response_2(
-        "Forbidden.html",
+        file_path,
         b"HTTP/1.1 403 Forbidden\r\n",
         b"Content-Type: text/html\r\n",
     )
     
     full_response = response_html_error 
-
     send_response(client_socket, full_response)
 
 
@@ -334,8 +334,7 @@ def create_proxy_server_socket(proxy_host, proxy_port):
     
     return proxy_socket
 
-
-def main():
+def main_proxy_module():
     proxy_host = "127.0.0.1"  # Địa chỉ IP của proxy server
     proxy_port = 8888  # Cổng dịch vụ proxy
     
@@ -361,7 +360,7 @@ def main():
         
         
 if __name__ == "__main__":
-    main()
+    main_proxy_module()
     
 
 # 1. http://oosc.online/
