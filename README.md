@@ -2,6 +2,16 @@
 
 This README provides an overview and usage guide for the provided Python Proxy Server script. The Proxy Server is designed to intercept and forward HTTP requests and responses between clients and remote servers while offering additional features like caching, whitelisting, and time-based access control.
 
+## Project Structure
+
+- `main.py`: Main script to run the proxy server and GUI concurrently.
+- `GUI/`: Directory containing GUI-related files.
+  - `ProxyGUI.py`: Implementation of the GUI using Tkinter.
+- `Proxy/`: Directory containing proxy-related files.
+  - `ProxyModule.py`: Implementation of the proxy server.
+  - `config.txt`: Configuration file for the proxy server.
+  - `Forbidden.html`: HTML file for forbidden response content.
+
 ## Table of Contents
 
 - [Features](#features)
